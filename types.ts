@@ -7,9 +7,9 @@ export type personaje={
 }
 
 export enum razas{
-   Hubbits,
-   Humanos,
-   Elfos,
-   Enanos,
-   Ents
+   "Hobbits",
+   "Humanos",
+   "Elfos",
+   "Enanos",
+   "Ents"
 }
