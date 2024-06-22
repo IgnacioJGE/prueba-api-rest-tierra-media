@@ -9,8 +9,6 @@ const PORT=env.PORT||Deno.env.get("PORT")||8000
 
 if (!MONGO_URL) {
   console.log("No mongo URL found");
-  Deno.exit(1);
-
 }
 
 try {
