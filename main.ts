@@ -4,11 +4,13 @@ import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
 
 
 const env=await load()
-const MONGO_URL=env.MONGO_URL||Deno.env.get("MONGO_URL")
+const MONGO_URL=env.MONGO_URL||Deno.env.get("MONGO_URL")||"mongodb+srv://nachetegarcia10:123456789N@cluster0.mwqkjcg.mongodb.net/TIERRAMEDIA?retryWrites=true&w=majority"
 const PORT=env.PORT||Deno.env.get("PORT")||8000
 
 if (!MONGO_URL) {
   console.log("No mongo URL found");
+  Deno.exit(1);
+
 }
 
 try {
