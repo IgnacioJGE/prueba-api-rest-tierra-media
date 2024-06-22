@@ -3,7 +3,7 @@ import mongoose from "npm:mongoose@7.6.3"
 import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
 import addPersonaje from "./resolvers/addPersonaje.ts";
 import getallPJ from "./resolvers/getallPJ.ts";
-
+import getpjid from "./resolvers/getpjid.ts";
 
 const env=await load()
 const MONGO_URL=env.MONGO_URL||Deno.env.get("MONGO_URL")
@@ -22,6 +22,8 @@ try {
   app.use(express.json())
   app.post("/api/tierramedia/personajes",addPersonaje)
   app.get("/api/tierramedia/personajes",getallPJ)
+  app.get("/api/tierramedia/personajes/:id",getpjid)
+
 
   app.listen(PORT,()=> console.info ((`Te estoy escuchando desde ${PORT}`)));
 
